@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>leaf-now-website</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="ri-leaf-line nav__logo-icon"></i> LeafNow
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="donate.html" class="nav__link">Donate</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">Products</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">FAQs</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">Contact Us</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="account.html" class="nav__link">Account</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+                
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="donate-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                       <img src="responsive-plants-website\assets\img\card1.png" alt="">
+                    </div>
+
+                    <div class="col-2">
+                           <div class="form-container">   
+                             <div class="form-btn">
+                                 <span onclick="money()">Money Donation</span>
+                                 <span onclick="seed()">Plant/Seed Donation</span>
+                                 <hr id="Indicator">
+                              </div> 
+
+                           <form id="MoneyForm">
+                                <input type="text" placeholder="Username">
+                                <input type="email" placeholder="email">
+                                <input type="text" placeholder="PhoneNumber" pattern="[0-9]{10}"/>
+                                <input type="text" placeholder="Enter your amount" >
+                                <button type="submit" class="btnn" onclick="openPopup()">Submit</button><br>
+                                  <div class="popup" id="popup">
+                                    <img src="assets\img\tick.png">
+                                    <h2>Thank You</h2>
+                                    <p>Your details has been successfully submitted.We will reach you out soon. Thanks!</p>
+                                    <button type="button" onclick="closePopup()">OK</button>
+                                  </div>
+                           </form>
+
+                           <form id="SeedForm">
+                            <input type="text" placeholder="Username">
+                            <input type="email" placeholder="Email">
+                            <input type="text" placeholder="PhoneNumber" pattern="[0-9]{10}"/>
+                            <input type="text" placeholder="Enter Plant/Seed to donate" >
+                            <button type="submit" class="btn1" onclick="openPopup1()">Submit</button>
+                            <div class="popup1" id="popup1">
+                                <img src="assets\img\tick.png">
+                                <h2>Thank You</h2>
+                                <p>Your details has been successfully submitted.We will reach you out soon. Thanks!</p>
+                                <button type="button" onclick="closePopup1()">OK</button>
+                            </div>
+                           </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+         <!--=============== SCROLL UP ===============-->
+         <a href="#" class="scrollup" id="scroll-up"> 
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+
+        <!--------------js for toggle Form---------------->
+        <script>
+
+            var MoneyForm = document.getElementById("MoneyForm");
+            var SeedForm = document.getElementById("SeedForm");
+            var Indicator = document.getElementById("Indicator");
+            
+            
+                function seed(){
+
+                    SeedForm.style.transform = "translateX(0px)";
+                    MoneyForm.style.transform = "translateX(0px)";
+                    Indicator.style.transform = "translateX(100px)";
+                }
+                function money(){
+
+                    SeedForm.style.transform = "translateX(300px)";
+                    MoneyForm.style.transform = "translateX(300px)";
+                    Indicator.style.transform = "translateX(0px)";
+                }
+                
+        </script>  
+
+        <script>
+            let popup = document.getElementById("popup");
+
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+        </script>
+        <script>
+            let popup1 = document.getElementById("popup1");
+
+            function openPopup1(){
+                popup.classList.add("open-popup1");
+            }
+            function closePopup1(){
+                popup.classList.remove("open-popup1");
+            }
+        </script>
+
+    </body>
+</html>
